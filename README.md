@@ -1,7 +1,7 @@
 
 # YoudaoTranslate | 有道翻译
 
-当前版本：[v3.3.0 Release](https://github.com/liyongjian5179/YoudaoTranslator/releases/tag/v3.3.0) · [直接下载 Workflow](https://github.com/liyongjian5179/YoudaoTranslator/releases/download/v3.3.0/YoudaoTranslator.alfredworkflow)
+当前源码版本：[v3.3.0](https://github.com/liyongjian5179/YoudaoTranslator/tree/v3.3.0)
 
 ## 此 Fork 的改进
 
@@ -38,14 +38,14 @@ macOS Monterey 请使用 V3 版本！
 
 ### 1. 下载并安装
 
-下载 [YoudaoTranslator.alfredworkflow](https://github.com/liyongjian5179/YoudaoTranslator/releases/download/v3.3.0/YoudaoTranslator.alfredworkflow)，双击导入 Alfred。内置运行时支持 Apple Silicon 和 Intel Mac。
-
-也可以从源码构建：
+从源码构建并双击生成的 `YoudaoTranslator.alfredworkflow` 导入 Alfred：
 
 ```bash
 npx -y pnpm@7.33.7 install --frozen-lockfile
 npm run package
 ```
+
+内置运行时支持 Apple Silicon 和 Intel Mac。
 
 ### 2. 配置 Workflow
 
