@@ -10,6 +10,12 @@ macOS Monterey 请使用 V3 版本！
 
 标记为施工中 (🚧) 特性 V3 尚未支持，如果需要使用，请切换到 V2 使用。
 
+## 此 Fork 的改进
+
+- 内置同时支持 Apple Silicon (`arm64`) 和 Intel (`x86_64`) 的 macOS 运行时，无需 Rosetta。
+- 修复翻译 API 返回中文时的乱码问题。
+- 补齐 Alfred Workflow 配置和打包脚本，提供可直接导入的 `.alfredworkflow` 文件。
+
 ## 特性
 - 🌟 [**无系统环境依赖**]() - 自带 [txiki](https://github.com/saghul/txiki.js) 运行环境，不再需要 PHP
 - 🌟 [**多平台支持**]() - 支持百度的翻译API
@@ -25,14 +31,16 @@ macOS Monterey 请使用 V3 版本！
 
 ## 🚀 开始使用
 
-### 1. 构建并安装
+### 1. 下载并安装
+
+下载 [YoudaoTranslator.alfredworkflow](https://github.com/liyongjian5179/YoudaoTranslator/releases/download/v3.1.1/YoudaoTranslator.alfredworkflow)，双击导入 Alfred。内置运行时支持 Apple Silicon 和 Intel Mac。
+
+也可以从源码构建：
 
 ```bash
 npx -y pnpm@7.33.7 install --frozen-lockfile
 npm run package
 ```
-
-双击生成的 `YoudaoTranslator.alfredworkflow` 导入 Alfred。内置运行时支持 Apple Silicon 和 Intel Mac。
 
 ### 2. 配置 Workflow
 
@@ -42,10 +50,10 @@ npm run package
 
 ## Contributors
 
-<a href="https://github.com/liyongjian5179" target="_blank"><img src="https://github.com/liyongjian5179.png" alt="liyongjian5179" height="60"/></a>
 <a href="https://iwenson.com" target="_blank"><img src="https://avatars1.githubusercontent.com/u/2544185?s=120&v=4" height="60"/></a> 
 <a href="https://blog.zthxxx.me" target="_blank"><img src="https://avatars0.githubusercontent.com/u/15135943?s=120&v=4" height="60"/></a> 
 <a href="https://www.zzaning.com/#/" target="_blank"><img src="https://avatars2.githubusercontent.com/u/12035097?s=88&u=7e419cd2eb7b9fec5ba061d8135c4875a4c32323&v=4" height="60"/></a> 
+<a href="https://github.com/liyongjian5179" target="_blank"><img src="https://github.com/liyongjian5179.png" alt="liyongjian5179" height="60"/></a>
 
 ## 使用库和参考资料
 
