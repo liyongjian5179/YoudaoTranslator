@@ -1,7 +1,7 @@
 
 # YoudaoTranslate | 有道翻译
 
-当前版本：[v3.2.0 Release](https://github.com/liyongjian5179/YoudaoTranslator/releases/tag/v3.2.0) · [直接下载 Workflow](https://github.com/liyongjian5179/YoudaoTranslator/releases/download/v3.2.0/YoudaoTranslator.alfredworkflow)
+当前版本：[v3.3.0 Release](https://github.com/liyongjian5179/YoudaoTranslator/releases/tag/v3.3.0) · [直接下载 Workflow](https://github.com/liyongjian5179/YoudaoTranslator/releases/download/v3.3.0/YoudaoTranslator.alfredworkflow)
 
 ## 此 Fork 的改进
 
@@ -9,6 +9,7 @@
 - 修复翻译 API 返回中文时的乱码问题。
 - 支持选中文本快捷键翻译并粘贴结果，以及 `/ja` 等临时目标语言前缀。
 - 配置或请求失败时，在 Alfred 中显示可读的错误提示。
+- 支持本地保存最近 20 条翻译记录，并通过 `yd *` 查看。
 - 补齐 Alfred Workflow 配置和打包脚本，提供可直接导入的 `.alfredworkflow` 文件。
 
 ![screenshot_1](screenshots/screenshot_1.png)
@@ -29,7 +30,7 @@ macOS Monterey 请使用 V3 版本！
 - 📢 [**英文发音**](screenshots/screenshot_3.png) - `⌘ Command` + `↩︎ Enter` 本地发音，`⌥ Alt` + `↩︎ Enter`  调用有道在线语音发音
 - 🚧 [**有道翻译生词本**](screenshots/word-book.jpg) - 可以将陌生单词加入有道生词本
 - 📃 [**回车复制**]() - 在选项上 `↩︎ Enter` 回车复制翻译结果
-- 🚧 **查询历史** - 暂未支持
+- 📚 **查询历史** - 输入 `yd *` 查看最近 20 条翻译记录
 - 🔮 [**网页预览**](screenshots/screenshot_4.gif) - 翻译结果上按 `⇧ Shift` 直接预览有道网页
 - 🚧 [**自动更新**](screenshots/update.png) - 输入 `update` 检查更新 Workflow
 
@@ -37,7 +38,7 @@ macOS Monterey 请使用 V3 版本！
 
 ### 1. 下载并安装
 
-下载 [YoudaoTranslator.alfredworkflow](https://github.com/liyongjian5179/YoudaoTranslator/releases/download/v3.2.0/YoudaoTranslator.alfredworkflow)，双击导入 Alfred。内置运行时支持 Apple Silicon 和 Intel Mac。
+下载 [YoudaoTranslator.alfredworkflow](https://github.com/liyongjian5179/YoudaoTranslator/releases/download/v3.3.0/YoudaoTranslator.alfredworkflow)，双击导入 Alfred。内置运行时支持 Apple Silicon 和 Intel Mac。
 
 也可以从源码构建：
 
@@ -53,6 +54,7 @@ npm run package
 - `yd today`：翻译后回车复制结果。
 - `yd /ja 你好`：临时译成日语；也支持 `zh`、`en`、`ko`、`fr`、`ru`、`de`、`es`。
 - `yds today`：翻译后回车粘贴到原应用。
+- `yd *`：查看最近 20 条翻译记录，回车复制选中的译文。
 - 在 Workflow 中给 **Hotkey** 绑定快捷键后，可先选中文本，再用快捷键翻译并回车粘贴。
 
 原项目的配置说明见 [Wiki](https://github.com/wensonsmith/YoudaoTranslator/wiki)。

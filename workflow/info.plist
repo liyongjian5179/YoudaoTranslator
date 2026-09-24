@@ -186,7 +186,7 @@ afplay "$voice"</string><key>scriptargtype</key><integer>1</integer><key>scriptf
 	<key>variables</key>
 	<dict><key>key</key><string></string><key>platform</key><string>Youdao</string><key>secret</key><string></string></dict>
 	<key>variablesdontexport</key><array><string>key</string><string>secret</string></array>
-	<key>version</key><string>3.2.0</string>
+	<key>version</key><string>3.3.0</string>
 	<key>webaddress</key><string>https://github.com/liyongjian5179/YoudaoTranslator</string>
 </dict>
 </plist>

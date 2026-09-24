@@ -3,6 +3,7 @@ declare var tjs
 import Translator from './translator';
 import { TranslationError } from './errors';
 import { TargetLanguage, targetLanguages } from './adapters/adapter';
+import { addHistory, historyOutput } from './history';
 
 const getEnv = (name: string): string | undefined => {
   // txiki before v24 exposed getenv(); newer releases expose tjs.env.
@@ -27,6 +28,7 @@ const errorMessage = (error: any): string => {
 const main = async (): Promise<string> => {
   let word = String(Array.from(tjs.args).pop() ?? '').trim();
   if (!word) return errorOutput('请输入要翻译的内容');
+  if (word === '*') return historyOutput();
 
   let target: TargetLanguage | undefined;
   const prefix = word.match(/^\/(\S+)(?:\s+|$)/);
@@ -49,7 +51,15 @@ const main = async (): Promise<string> => {
     return errorOutput('platform 需设置为 Youdao 或 Baidu');
   }
 
-  return new Translator(key, secret, platform).translate(word, target);
+  const result = await new Translator(key, secret, platform).translate(word, target);
+  try {
+    const items = JSON.parse(result).items;
+    const first = items?.find(item => item.valid !== false && item.arg);
+    if (first) await addHistory(word, first.arg, target);
+  } catch (_) {
+    // A malformed result is handled by the normal output path.
+  }
+  return result;
 };
 
 main().then(
