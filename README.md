@@ -1,6 +1,14 @@
 
 # YoudaoTranslate | 有道翻译
 
+当前版本：[v3.1.1 Release](https://github.com/liyongjian5179/YoudaoTranslator/releases/tag/v3.1.1) · [直接下载 Workflow](https://github.com/liyongjian5179/YoudaoTranslator/releases/download/v3.1.1/YoudaoTranslator.alfredworkflow)
+
+## 此 Fork 的改进
+
+- 内置同时支持 Apple Silicon (`arm64`) 和 Intel (`x86_64`) 的 macOS 运行时，无需 Rosetta。
+- 修复翻译 API 返回中文时的乱码问题。
+- 补齐 Alfred Workflow 配置和打包脚本，提供可直接导入的 `.alfredworkflow` 文件。
+
 ![screenshot_1](screenshots/screenshot_1.png)
 
 ## ⚠️ V3 更新说明
@@ -9,12 +17,6 @@
 macOS Monterey 请使用 V3 版本！
 
 标记为施工中 (🚧) 特性 V3 尚未支持，如果需要使用，请切换到 V2 使用。
-
-## 此 Fork 的改进
-
-- 内置同时支持 Apple Silicon (`arm64`) 和 Intel (`x86_64`) 的 macOS 运行时，无需 Rosetta。
-- 修复翻译 API 返回中文时的乱码问题。
-- 补齐 Alfred Workflow 配置和打包脚本，提供可直接导入的 `.alfredworkflow` 文件。
 
 ## 特性
 - 🌟 [**无系统环境依赖**]() - 自带 [txiki](https://github.com/saghul/txiki.js) 运行环境，不再需要 PHP
