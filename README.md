@@ -1,10 +1,5 @@
 
-# YoudaoTranslate | 有道翻译  
-
-<p align="left">
-<img alt="GitHub stars" src="https://visitor-badge.laobi.icu/badge?page_id=wensonsmith.YoudaoTranslate"/>
-<img alt="GitHub stars" src="https://img.shields.io/github/stars/wensonsmith/YoudaoTranslate?style=social"/>
-</p>
+# YoudaoTranslate | 有道翻译
 
 ![screenshot_1](screenshots/screenshot_1.png)
 
@@ -30,34 +25,27 @@ macOS Monterey 请使用 V3 版本！
 
 ## 🚀 开始使用
 
-🌚  遇到问题不要怕，扫码加群来解答，[**点击扫码**](screenshots/wechat-group.png)
-
-### 1. 下载安装
-
-- [GitHub Releases 下载](https://github.com/wensonsmith/YoudaoTranslate/releases)
-- [又拍云下载 v3.1.0](https://img.seekbetter.me/workflows/YoudaoTranslator-3.1.zip)
-
-### 2. 配置Workflow
-
-[👉 请参考 wiki 进行配置](https://github.com/wensonsmith/YoudaoTranslator/wiki)
-
-### 3. 从源码构建 Alfred Workflow
+### 1. 构建并安装
 
 ```bash
 npx -y pnpm@7.33.7 install --frozen-lockfile
 npm run package
 ```
 
-生成的 `YoudaoTranslator.alfredworkflow` 支持 Apple Silicon 和 Intel Mac。导入 Alfred 后，在 Workflow Variables 中填写 `key`、`secret` 和 `platform`。
+双击生成的 `YoudaoTranslator.alfredworkflow` 导入 Alfred。内置运行时支持 Apple Silicon 和 Intel Mac。
+
+### 2. 配置 Workflow
+
+在 Alfred 的 Workflow Variables 中填写 `key`（应用 ID）、`secret`（应用密钥）和 `platform`（`Youdao` 或 `Baidu`），然后输入 `yd` 加空格和要翻译的内容。
+
+原项目的配置说明见 [Wiki](https://github.com/wensonsmith/YoudaoTranslator/wiki)。
 
 ## Contributors
 
+<a href="https://github.com/liyongjian5179" target="_blank"><img src="https://github.com/liyongjian5179.png" alt="liyongjian5179" height="60"/></a>
 <a href="https://iwenson.com" target="_blank"><img src="https://avatars1.githubusercontent.com/u/2544185?s=120&v=4" height="60"/></a> 
 <a href="https://blog.zthxxx.me" target="_blank"><img src="https://avatars0.githubusercontent.com/u/15135943?s=120&v=4" height="60"/></a> 
 <a href="https://www.zzaning.com/#/" target="_blank"><img src="https://avatars2.githubusercontent.com/u/12035097?s=88&u=7e419cd2eb7b9fec5ba061d8135c4875a4c32323&v=4" height="60"/></a> 
-
-## ~~Buy me a coffee~~ 🍼 冲奶粉!
-![微信支付](./screenshots/sponsor.PNG)
 
 ## 使用库和参考资料
 
