@@ -4,6 +4,7 @@ import Translator from './translator';
 import { TranslationError } from './errors';
 import { TargetLanguage, targetLanguages } from './adapters/adapter';
 import { addHistory, historyOutput } from './history';
+import { addUpdateNotice, checkInBackground, updateOutput } from './update';
 
 const getEnv = (name: string): string | undefined => {
   // txiki before v24 exposed getenv(); newer releases expose tjs.env.
@@ -27,8 +28,13 @@ const errorMessage = (error: any): string => {
 
 const main = async (): Promise<string> => {
   let word = String(Array.from(tjs.args).pop() ?? '').trim();
+  if (word === '--background-update') {
+    await checkInBackground();
+    return '';
+  }
+  if (word === '--manual-update') return updateOutput();
   if (!word) return errorOutput('请输入要翻译的内容');
-  if (word === '*') return historyOutput();
+  if (word === '*') return addUpdateNotice(await historyOutput());
 
   let target: TargetLanguage | undefined;
   const prefix = word.match(/^\/(\S+)(?:\s+|$)/);
@@ -59,10 +65,10 @@ const main = async (): Promise<string> => {
   } catch (_) {
     // A malformed result is handled by the normal output path.
   }
-  return result;
+  return addUpdateNotice(result);
 };
 
 main().then(
-  result => console.log(result),
+  result => { if (result) console.log(result); },
   error => console.log(errorOutput(errorMessage(error))),
 );

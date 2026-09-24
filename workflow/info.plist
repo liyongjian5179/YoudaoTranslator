@@ -36,6 +36,8 @@
 		<array><dict><key>destinationuid</key><string>CAF59F43-6C28-47BF-B3DA-1A65C2198F2F</string><key>modifiers</key><integer>0</integer><key>modifiersubtext</key><string></string><key>vitoclose</key><false/></dict></array>
 		<key>CAF59F43-6C28-47BF-B3DA-1A65C2198F2F</key>
 		<array><dict><key>destinationuid</key><string>34050778-5F09-4E68-A7AB-A3A4F7C58529</string><key>modifiers</key><integer>0</integer><key>modifiersubtext</key><string></string><key>vitoclose</key><false/></dict></array>
+		<key>45383460-485E-4767-A91C-570A67F4257C</key>
+		<array><dict><key>destinationuid</key><string>037A4C3E-1F70-4110-B788-0D116BF40773</string><key>modifiers</key><integer>0</integer><key>modifiersubtext</key><string></string><key>vitoclose</key><false/></dict></array>
 	</dict>
 	<key>createdby</key>
 	<string>liyongjian5179</string>
@@ -62,7 +64,7 @@
 				<key>queuedelaymode</key><integer>2</integer>
 				<key>queuemode</key><integer>2</integer>
 				<key>runningsubtext</key><string>正在翻译···</string>
-				<key>script</key><string>./runtime/txiki ./index.js "$1"</string>
+				<key>script</key><string>./run.sh "$1"</string>
 				<key>scriptargtype</key><integer>1</integer>
 				<key>scriptfile</key><string></string>
 				<key>subtext</key><string>请输入要翻译的内容</string>
@@ -106,7 +108,7 @@
 				<key>queuedelaymode</key><integer>2</integer>
 				<key>queuemode</key><integer>2</integer>
 				<key>runningsubtext</key><string>正在翻译···</string>
-				<key>script</key><string>./runtime/txiki ./index.js "$1"</string>
+				<key>script</key><string>./run.sh "$1"</string>
 				<key>scriptargtype</key><integer>1</integer>
 				<key>scriptfile</key><string></string>
 				<key>subtext</key><string>翻译后粘贴到原应用</string>
@@ -116,6 +118,44 @@
 			</dict>
 			<key>type</key><string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key><string>DC66925E-A189-40AE-83D7-791D72523BB5</string>
+			<key>version</key><integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key><false/>
+				<key>alfredfiltersresultsmatchmode</key><integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key><false/>
+				<key>argumenttrimmode</key><integer>0</integer>
+				<key>argumenttype</key><integer>2</integer>
+				<key>escaping</key><integer>102</integer>
+				<key>keyword</key><string>ydupdate</string>
+				<key>queuedelayimmediatelyinitially</key><true/>
+				<key>queuedelaymode</key><integer>0</integer>
+				<key>queuemode</key><integer>1</integer>
+				<key>runningsubtext</key><string>正在检查 GitHub Release</string>
+				<key>script</key><string>./runtime/txiki ./index.js --manual-update</string>
+				<key>scriptargtype</key><integer>1</integer>
+				<key>scriptfile</key><string></string>
+				<key>subtext</key><string>检查 Workflow 是否有新版本</string>
+				<key>title</key><string>检查更新</string>
+				<key>type</key><integer>0</integer>
+				<key>withspace</key><false/>
+			</dict>
+			<key>type</key><string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key><string>45383460-485E-4767-A91C-570A67F4257C</string>
+			<key>version</key><integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key><string></string>
+				<key>skipqueryencode</key><true/>
+				<key>spaces</key><string></string>
+				<key>url</key><string>{query}</string>
+			</dict>
+			<key>type</key><string>alfred.workflow.action.openurl</string>
+			<key>uid</key><string>037A4C3E-1F70-4110-B788-0D116BF40773</string>
 			<key>version</key><integer>3</integer>
 		</dict>
 		<dict>
@@ -166,7 +206,7 @@ afplay "$voice"</string><key>scriptargtype</key><integer>1</integer><key>scriptf
 		</dict>
 	</array>
 	<key>readme</key>
-	<string>配置 Workflow Variables：key 填写应用 ID，secret 填写应用密钥，platform 填写 Youdao 或 Baidu。yd 翻译并复制，yds 翻译并粘贴；可给 Hotkey 绑定快捷键翻译选中文本。使用 /ja 等前缀指定目标语言。支持 Apple Silicon 和 Intel Mac。</string>
+	<string>配置 Workflow Variables：key 填写应用 ID，secret 填写应用密钥，platform 填写 Youdao 或 Baidu。yd 翻译并复制，yds 翻译并粘贴；可给 Hotkey 绑定快捷键翻译选中文本。使用 /ja 等前缀指定目标语言，yd * 查看历史，ydupdate 立即检查更新。支持 Apple Silicon 和 Intel Mac。</string>
 	<key>uidata</key>
 	<dict>
 		<key>8FE8475E-6310-49A4-967E-D6CCE73A86AC</key><dict><key>xpos</key><real>320</real><key>ypos</key><real>40</real></dict>
@@ -181,12 +221,14 @@ afplay "$voice"</string><key>scriptargtype</key><integer>1</integer><key>scriptf
 		<key>6B0F6A32-751F-4071-A1E8-76A2E9486962</key><dict><key>xpos</key><real>1000</real><key>ypos</key><real>220</real></dict>
 		<key>284F6AAD-8FE7-44A6-AAE4-62A0F8BEE779</key><dict><key>xpos</key><real>1000</real><key>ypos</key><real>350</real></dict>
 		<key>34050778-5F09-4E68-A7AB-A3A4F7C58529</key><dict><key>xpos</key><real>1100</real><key>ypos</key><real>40</real></dict>
+		<key>45383460-485E-4767-A91C-570A67F4257C</key><dict><key>xpos</key><real>320</real><key>ypos</key><real>650</real></dict>
+		<key>037A4C3E-1F70-4110-B788-0D116BF40773</key><dict><key>xpos</key><real>580</real><key>ypos</key><real>650</real></dict>
 	</dict>
 	<key>userconfigurationconfig</key><array/>
 	<key>variables</key>
 	<dict><key>key</key><string></string><key>platform</key><string>Youdao</string><key>secret</key><string></string></dict>
 	<key>variablesdontexport</key><array><string>key</string><string>secret</string></array>
-	<key>version</key><string>3.3.0</string>
+	<key>version</key><string>3.4.0</string>
 	<key>webaddress</key><string>https://github.com/liyongjian5179/YoudaoTranslator</string>
 </dict>
 </plist>

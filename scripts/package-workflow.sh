@@ -16,6 +16,7 @@ cd "$root_dir"
 npm run build
 cp -R dist/. "$stage_dir/"
 cp workflow/info.plist workflow/icon.png "$stage_dir/"
+cp workflow/run.sh "$stage_dir/"
 
 rm -f "$output"
 (cd "$stage_dir" && zip -qr "$output" .)
