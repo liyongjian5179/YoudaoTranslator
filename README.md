@@ -24,12 +24,12 @@ macOS Monterey 请使用 V3 版本！
 - 🌟 [**无系统环境依赖**]() - 自带 [txiki](https://github.com/saghul/txiki.js) 运行环境，不再需要 PHP
 - 🌟 [**多平台支持**]() - 支持百度的翻译API
 - 🌐 [**中英文自动互翻**]() - 支持 `CamelCase` 驼峰短语翻译，长句自动换行
-- 🎭 [**多语言支持**](screenshots/multi.jpg) - 使用 `/zh`、`/en`、`/ja`、`/ko`、`/fr`、`/ru`、`/de`、`/es` 指定目标语言
+- 🎭 [**多语言支持**](screenshots/multi.jpg) - 可以识别中文、英文、日文、韩文、法文、俄文等，并可使用 `/zh`、`/en`、`/ja`、`/ko`、`/fr`、`/ru`、`/de`、`/es` 指定目标语言
 - 🎹 **划词翻译** - 为 Workflow 的 Hotkey 设置快捷键，翻译选中文本后回车粘贴
 - 📢 [**英文发音**](screenshots/screenshot_3.png) - `⌘ Command` + `↩︎ Enter` 本地发音，`⌥ Alt` + `↩︎ Enter`  调用有道在线语音发音
 - 🚧 [**有道翻译生词本**](screenshots/word-book.jpg) - 可以将陌生单词加入有道生词本
 - 📃 [**回车复制**]() - 在选项上 `↩︎ Enter` 回车复制翻译结果
-- 🚧 [**查询历史**](screenshots/translate_history.gif) -  `yd *` 查询最近的翻译记录
+- 🚧 **查询历史** - 暂未支持
 - 🔮 [**网页预览**](screenshots/screenshot_4.gif) - 翻译结果上按 `⇧ Shift` 直接预览有道网页
 - 🚧 [**自动更新**](screenshots/update.png) - 输入 `update` 检查更新 Workflow
 
