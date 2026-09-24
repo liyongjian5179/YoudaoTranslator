@@ -1,12 +1,14 @@
 
 # YoudaoTranslate | 有道翻译
 
-当前版本：[v3.1.1 Release](https://github.com/liyongjian5179/YoudaoTranslator/releases/tag/v3.1.1) · [直接下载 Workflow](https://github.com/liyongjian5179/YoudaoTranslator/releases/download/v3.1.1/YoudaoTranslator.alfredworkflow)
+当前版本：[v3.2.0 Release](https://github.com/liyongjian5179/YoudaoTranslator/releases/tag/v3.2.0) · [直接下载 Workflow](https://github.com/liyongjian5179/YoudaoTranslator/releases/download/v3.2.0/YoudaoTranslator.alfredworkflow)
 
 ## 此 Fork 的改进
 
 - 内置同时支持 Apple Silicon (`arm64`) 和 Intel (`x86_64`) 的 macOS 运行时，无需 Rosetta。
 - 修复翻译 API 返回中文时的乱码问题。
+- 支持选中文本快捷键翻译并粘贴结果，以及 `/ja` 等临时目标语言前缀。
+- 配置或请求失败时，在 Alfred 中显示可读的错误提示。
 - 补齐 Alfred Workflow 配置和打包脚本，提供可直接导入的 `.alfredworkflow` 文件。
 
 ![screenshot_1](screenshots/screenshot_1.png)
@@ -22,8 +24,8 @@ macOS Monterey 请使用 V3 版本！
 - 🌟 [**无系统环境依赖**]() - 自带 [txiki](https://github.com/saghul/txiki.js) 运行环境，不再需要 PHP
 - 🌟 [**多平台支持**]() - 支持百度的翻译API
 - 🌐 [**中英文自动互翻**]() - 支持 `CamelCase` 驼峰短语翻译，长句自动换行
-- 🎭 [**多语言支持**](screenshots/multi.jpg) - 可以识别中文、英文、日文、韩文、法文、俄文等
-- 🎹 [**快捷键支持**]() - 双击 `⌥ Alt`  直接翻译选中内容
+- 🎭 [**多语言支持**](screenshots/multi.jpg) - 使用 `/zh`、`/en`、`/ja`、`/ko`、`/fr`、`/ru`、`/de`、`/es` 指定目标语言
+- 🎹 **划词翻译** - 为 Workflow 的 Hotkey 设置快捷键，翻译选中文本后回车粘贴
 - 📢 [**英文发音**](screenshots/screenshot_3.png) - `⌘ Command` + `↩︎ Enter` 本地发音，`⌥ Alt` + `↩︎ Enter`  调用有道在线语音发音
 - 🚧 [**有道翻译生词本**](screenshots/word-book.jpg) - 可以将陌生单词加入有道生词本
 - 📃 [**回车复制**]() - 在选项上 `↩︎ Enter` 回车复制翻译结果
@@ -35,7 +37,7 @@ macOS Monterey 请使用 V3 版本！
 
 ### 1. 下载并安装
 
-下载 [YoudaoTranslator.alfredworkflow](https://github.com/liyongjian5179/YoudaoTranslator/releases/download/v3.1.1/YoudaoTranslator.alfredworkflow)，双击导入 Alfred。内置运行时支持 Apple Silicon 和 Intel Mac。
+下载 [YoudaoTranslator.alfredworkflow](https://github.com/liyongjian5179/YoudaoTranslator/releases/download/v3.2.0/YoudaoTranslator.alfredworkflow)，双击导入 Alfred。内置运行时支持 Apple Silicon 和 Intel Mac。
 
 也可以从源码构建：
 
@@ -47,6 +49,11 @@ npm run package
 ### 2. 配置 Workflow
 
 在 Alfred 的 Workflow Variables 中填写 `key`（应用 ID）、`secret`（应用密钥）和 `platform`（`Youdao` 或 `Baidu`），然后输入 `yd` 加空格和要翻译的内容。
+
+- `yd today`：翻译后回车复制结果。
+- `yd /ja 你好`：临时译成日语；也支持 `zh`、`en`、`ko`、`fr`、`ru`、`de`、`es`。
+- `yds today`：翻译后回车粘贴到原应用。
+- 在 Workflow 中给 **Hotkey** 绑定快捷键后，可先选中文本，再用快捷键翻译并回车粘贴。
 
 原项目的配置说明见 [Wiki](https://github.com/wensonsmith/YoudaoTranslator/wiki)。
 

@@ -1,5 +1,11 @@
-import { Adapter, Result } from "./adapter";
+import { Adapter, Result, TargetLanguage } from "./adapter";
 import md5 from "../libs/md5";
+import { TranslationError } from "../errors";
+
+const languageCodes: Record<TargetLanguage, string> = {
+  zh: 'zh-CHS', en: 'en', ja: 'ja', ko: 'ko',
+  fr: 'fr', ru: 'ru', de: 'de', es: 'es',
+};
 
 class Youdao implements Adapter {
   key: string;
@@ -19,12 +25,12 @@ class Youdao implements Adapter {
     this.secret = secret;
   }
 
-  url(word: string): string {
+  url(word: string, target?: TargetLanguage): string {
     this.isChinese = this.detectChinese(word);
     this.word = word;
 
     const from = this.isChinese ? "zh-CHS" : "auto";
-    const to = this.isChinese ? "en" : "zh-CHS";
+    const to = target ? languageCodes[target] : (this.isChinese ? "en" : "zh-CHS");
     const salt = Math.floor(Math.random() * 10000).toString();
     const sign = md5(`${this.key}${word}${salt}${this.secret}`);
 
@@ -41,7 +47,7 @@ class Youdao implements Adapter {
   }
 
   parse(data: any): Result[] {
-    if (data.errorCode !== "0") {
+    if (String(data.errorCode) !== "0") {
       return this.parseError(data.errorCode);
     }
 
@@ -104,7 +110,7 @@ class Youdao implements Adapter {
     return phonetic;
   }
 
-  private parseError(code: number): Result[] {
+  private parseError(code: number | string): never {
     const messages = {
       101: "缺少必填的参数",
       102: "不支持的语言类型",
@@ -121,7 +127,7 @@ class Youdao implements Adapter {
 
     const message = messages[code] || "请参考错误码：" + code;
 
-    return this.addResult("👻 翻译出错啦", message, "Ooops...");
+    throw new TranslationError(message);
   }
 
   private addResult( title: string, subtitle: string, arg: string = "", pronounce: string = ""): Result[] {

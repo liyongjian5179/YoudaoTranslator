@@ -15,6 +15,19 @@
 			<dict><key>destinationuid</key><string>6B0F6A32-751F-4071-A1E8-76A2E9486962</string><key>modifiers</key><integer>1048576</integer><key>modifiersubtext</key><string></string><key>vitoclose</key><true/></dict>
 			<dict><key>destinationuid</key><string>284F6AAD-8FE7-44A6-AAE4-62A0F8BEE779</string><key>modifiers</key><integer>524288</integer><key>modifiersubtext</key><string></string><key>vitoclose</key><true/></dict>
 		</array>
+		<key>E83333A5-93D9-4085-BB47-AA5C7648876A</key>
+		<array><dict><key>destinationuid</key><string>DC66925E-A189-40AE-83D7-791D72523BB5</string><key>modifiers</key><integer>0</integer><key>modifiersubtext</key><string></string><key>vitoclose</key><false/></dict></array>
+		<key>DC66925E-A189-40AE-83D7-791D72523BB5</key>
+		<array>
+			<dict><key>destinationuid</key><string>52FBED5D-D9AB-4913-B36C-B3966AEA4E27</string><key>modifiers</key><integer>0</integer><key>modifiersubtext</key><string></string><key>vitoclose</key><false/></dict>
+			<dict><key>destinationuid</key><string>487D7A3C-11A7-416D-8F0F-21097B979E4C</string><key>modifiers</key><integer>0</integer><key>modifiersubtext</key><string></string><key>vitoclose</key><true/></dict>
+			<dict><key>destinationuid</key><string>6B0F6A32-751F-4071-A1E8-76A2E9486962</string><key>modifiers</key><integer>1048576</integer><key>modifiersubtext</key><string></string><key>vitoclose</key><true/></dict>
+			<dict><key>destinationuid</key><string>284F6AAD-8FE7-44A6-AAE4-62A0F8BEE779</string><key>modifiers</key><integer>524288</integer><key>modifiersubtext</key><string></string><key>vitoclose</key><true/></dict>
+		</array>
+		<key>52FBED5D-D9AB-4913-B36C-B3966AEA4E27</key>
+		<array><dict><key>destinationuid</key><string>F9152609-C3BB-420A-A4DB-34141DEE12F3</string><key>modifiers</key><integer>0</integer><key>modifiersubtext</key><string></string><key>vitoclose</key><false/></dict></array>
+		<key>F9152609-C3BB-420A-A4DB-34141DEE12F3</key>
+		<array><dict><key>destinationuid</key><string>34050778-5F09-4E68-A7AB-A3A4F7C58529</string><key>modifiers</key><integer>0</integer><key>modifiersubtext</key><string></string><key>vitoclose</key><false/></dict></array>
 		<key>487D7A3C-11A7-416D-8F0F-21097B979E4C</key>
 		<array><dict><key>destinationuid</key><string>1631393E-5B53-4C8B-AF64-A04B687438DF</string><key>modifiers</key><integer>0</integer><key>modifiersubtext</key><string></string><key>vitoclose</key><false/></dict></array>
 		<key>1631393E-5B53-4C8B-AF64-A04B687438DF</key>
@@ -62,8 +75,56 @@
 			<key>version</key><integer>3</integer>
 		</dict>
 		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key><integer>0</integer>
+				<key>argument</key><integer>1</integer>
+				<key>focusedappvariable</key><false/>
+				<key>focusedappvariablename</key><string></string>
+				<key>hotkey</key><integer>0</integer>
+				<key>hotmod</key><integer>0</integer>
+				<key>leftcursor</key><false/>
+				<key>modsmode</key><integer>0</integer>
+				<key>relatedAppsMode</key><integer>0</integer>
+			</dict>
+			<key>type</key><string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key><string>E83333A5-93D9-4085-BB47-AA5C7648876A</string>
+			<key>version</key><integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key><false/>
+				<key>alfredfiltersresultsmatchmode</key><integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key><false/>
+				<key>argumenttrimmode</key><integer>0</integer>
+				<key>argumenttype</key><integer>0</integer>
+				<key>escaping</key><integer>102</integer>
+				<key>keyword</key><string>yds</string>
+				<key>queuedelaycustom</key><integer>2</integer>
+				<key>queuedelayimmediatelyinitially</key><false/>
+				<key>queuedelaymode</key><integer>2</integer>
+				<key>queuemode</key><integer>2</integer>
+				<key>runningsubtext</key><string>正在翻译···</string>
+				<key>script</key><string>./runtime/txiki ./index.js "$1"</string>
+				<key>scriptargtype</key><integer>1</integer>
+				<key>scriptfile</key><string></string>
+				<key>subtext</key><string>翻译后粘贴到原应用</string>
+				<key>title</key><string>划词翻译并粘贴</string>
+				<key>type</key><integer>0</integer>
+				<key>withspace</key><true/>
+			</dict>
+			<key>type</key><string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key><string>DC66925E-A189-40AE-83D7-791D72523BB5</string>
+			<key>version</key><integer>3</integer>
+		</dict>
+		<dict>
 			<key>config</key><dict><key>inputstring</key><string>{query}</string><key>matchcasesensitive</key><false/><key>matchmode</key><integer>2</integer><key>matchstring</key><string>^(?!~).+</string></dict>
 			<key>type</key><string>alfred.workflow.utility.filter</string><key>uid</key><string>A78568B3-C360-4A35-A46A-0D91172F86EF</string><key>version</key><integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key><dict><key>inputstring</key><string>{query}</string><key>matchcasesensitive</key><false/><key>matchmode</key><integer>2</integer><key>matchstring</key><string>^(?!~).+</string></dict>
+			<key>type</key><string>alfred.workflow.utility.filter</string><key>uid</key><string>52FBED5D-D9AB-4913-B36C-B3966AEA4E27</string><key>version</key><integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key><dict><key>inputstring</key><string>{query}</string><key>matchcasesensitive</key><false/><key>matchmode</key><integer>2</integer><key>matchstring</key><string>^~</string></dict>
@@ -76,6 +137,10 @@
 		<dict>
 			<key>config</key><dict><key>autopaste</key><false/><key>clipboardtext</key><string>{query}</string><key>ignoredynamicplaceholders</key><false/><key>transient</key><false/></dict>
 			<key>type</key><string>alfred.workflow.output.clipboard</string><key>uid</key><string>CAF59F43-6C28-47BF-B3DA-1A65C2198F2F</string><key>version</key><integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key><dict><key>autopaste</key><true/><key>clipboardtext</key><string>{query}</string><key>ignoredynamicplaceholders</key><false/><key>transient</key><false/></dict>
+			<key>type</key><string>alfred.workflow.output.clipboard</string><key>uid</key><string>F9152609-C3BB-420A-A4DB-34141DEE12F3</string><key>version</key><integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key><dict><key>unstackview</key><false/></dict>
@@ -101,13 +166,27 @@ afplay "$voice"</string><key>scriptargtype</key><integer>1</integer><key>scriptf
 		</dict>
 	</array>
 	<key>readme</key>
-	<string>配置 Alfred Workflow Variables：key 填写应用 ID，secret 填写应用密钥，platform 填写 Youdao 或 Baidu。输入 yd 加空格后翻译。此版本内置 universal txiki runtime，支持 Apple Silicon 和 Intel Mac。</string>
-	<key>uidata</key><dict/>
+	<string>配置 Workflow Variables：key 填写应用 ID，secret 填写应用密钥，platform 填写 Youdao 或 Baidu。yd 翻译并复制，yds 翻译并粘贴；可给 Hotkey 绑定快捷键翻译选中文本。使用 /ja 等前缀指定目标语言。支持 Apple Silicon 和 Intel Mac。</string>
+	<key>uidata</key>
+	<dict>
+		<key>8FE8475E-6310-49A4-967E-D6CCE73A86AC</key><dict><key>xpos</key><real>320</real><key>ypos</key><real>40</real></dict>
+		<key>E83333A5-93D9-4085-BB47-AA5C7648876A</key><dict><key>xpos</key><real>100</real><key>ypos</key><real>400</real></dict>
+		<key>DC66925E-A189-40AE-83D7-791D72523BB5</key><dict><key>xpos</key><real>320</real><key>ypos</key><real>400</real></dict>
+		<key>A78568B3-C360-4A35-A46A-0D91172F86EF</key><dict><key>xpos</key><real>580</real><key>ypos</key><real>40</real></dict>
+		<key>52FBED5D-D9AB-4913-B36C-B3966AEA4E27</key><dict><key>xpos</key><real>580</real><key>ypos</key><real>440</real></dict>
+		<key>487D7A3C-11A7-416D-8F0F-21097B979E4C</key><dict><key>xpos</key><real>580</real><key>ypos</key><real>220</real></dict>
+		<key>1631393E-5B53-4C8B-AF64-A04B687438DF</key><dict><key>xpos</key><real>790</real><key>ypos</key><real>220</real></dict>
+		<key>CAF59F43-6C28-47BF-B3DA-1A65C2198F2F</key><dict><key>xpos</key><real>820</real><key>ypos</key><real>40</real></dict>
+		<key>F9152609-C3BB-420A-A4DB-34141DEE12F3</key><dict><key>xpos</key><real>820</real><key>ypos</key><real>440</real></dict>
+		<key>6B0F6A32-751F-4071-A1E8-76A2E9486962</key><dict><key>xpos</key><real>1000</real><key>ypos</key><real>220</real></dict>
+		<key>284F6AAD-8FE7-44A6-AAE4-62A0F8BEE779</key><dict><key>xpos</key><real>1000</real><key>ypos</key><real>350</real></dict>
+		<key>34050778-5F09-4E68-A7AB-A3A4F7C58529</key><dict><key>xpos</key><real>1100</real><key>ypos</key><real>40</real></dict>
+	</dict>
 	<key>userconfigurationconfig</key><array/>
 	<key>variables</key>
 	<dict><key>key</key><string></string><key>platform</key><string>Youdao</string><key>secret</key><string></string></dict>
 	<key>variablesdontexport</key><array><string>key</string><string>secret</string></array>
-	<key>version</key><string>3.1.1</string>
+	<key>version</key><string>3.2.0</string>
 	<key>webaddress</key><string>https://github.com/liyongjian5179/YoudaoTranslator</string>
 </dict>
 </plist>

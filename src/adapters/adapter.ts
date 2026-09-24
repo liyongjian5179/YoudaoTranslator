@@ -1,3 +1,6 @@
+export const targetLanguages = ['zh', 'en', 'ja', 'ko', 'fr', 'ru', 'de', 'es'] as const;
+export type TargetLanguage = typeof targetLanguages[number];
+
 export interface Result {
   title: string;
   subtitle: string;
@@ -15,8 +18,7 @@ export interface Adapter {
 
   isChinese: boolean;
 
-  url :(word: string) => string;
+  url: (word: string, target?: TargetLanguage) => string;
 
   parse: (response: any) => Result[]
 }
-

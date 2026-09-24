@@ -1,5 +1,11 @@
-import { Adapter, Result } from "./adapter";
+import { Adapter, Result, TargetLanguage } from "./adapter";
 import md5 from "../libs/md5";
+import { TranslationError } from "../errors";
+
+const languageCodes: Record<TargetLanguage, string> = {
+  zh: 'zh', en: 'en', ja: 'jp', ko: 'kor',
+  fr: 'fra', ru: 'ru', de: 'de', es: 'spa',
+};
 
 class Baidu implements Adapter {
   key: string;
@@ -19,12 +25,12 @@ class Baidu implements Adapter {
     this.secret = secret;
   }
 
-  url(word: string): string {
+  url(word: string, target?: TargetLanguage): string {
     this.isChinese = this.detectChinese(word);
     this.word = word;
 
     const from = this.isChinese ? "zh" : "auto";
-    const to = this.isChinese ? "en" : "zh";
+    const to = target ? languageCodes[target] : (this.isChinese ? "en" : "zh");
     const salt = Math.floor(Math.random() * 10000).toString();
     const sign = md5(`${this.key}${word}${salt}${this.secret}`);
 
@@ -56,7 +62,7 @@ class Baidu implements Adapter {
     return this.results;
   }
 
-  private parseError(code: number): Result[] {
+  private parseError(code: number | string): never {
     const messages = {
       54000: "缺少必填的参数",
       58001: "不支持的语言类型",
@@ -71,7 +77,7 @@ class Baidu implements Adapter {
 
     const message = messages[code] || "请参考错误码：" + code;
 
-    return this.addResult("👻 翻译出错啦", message, "Ooops...");
+    throw new TranslationError(message);
   }
 
   private addResult( title: string, subtitle: string, arg: string = "", pronounce: string = ""): Result[] {
