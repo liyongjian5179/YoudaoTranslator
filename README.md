@@ -10,7 +10,7 @@
 - 支持选中文本快捷键翻译并粘贴结果，以及 `/ja` 等临时目标语言前缀。
 - 配置或请求失败时，在 Alfred 中显示可读的错误提示。
 - 支持本地保存最近 20 条翻译记录，并通过 `yd *` 查看。
-- 使用时每 24 小时后台检查一次新版本，`ydupdate` 可立即检查。
+- 首次使用和距上次成功检查满 24 小时后的下一次使用会后台检查更新，`ydupdate` 可立即检查。
 - 补齐 Alfred Workflow 配置和打包脚本，提供可直接导入的 `.alfredworkflow` 文件。
 
 ![screenshot_1](screenshots/screenshot_1.png)
@@ -33,7 +33,7 @@ macOS Monterey 请使用 V3 版本！
 - 📃 [**回车复制**]() - 在选项上 `↩︎ Enter` 回车复制翻译结果
 - 📚 **查询历史** - 输入 `yd *` 查看最近 20 条翻译记录
 - 🔮 [**网页预览**](screenshots/screenshot_4.gif) - 翻译结果上按 `⇧ Shift` 直接预览有道网页
-- 🚧 [**自动更新**](screenshots/update.png) - 输入 `update` 检查更新 Workflow
+- 🔔 **更新提醒** - 后台检查已发布的 GitHub Release，有新版本时在翻译结果中提示；不会自动下载安装
 
 ## 🚀 开始使用
 
@@ -56,7 +56,7 @@ npm run package
 - `yd /ja 你好`：临时译成日语；也支持 `zh`、`en`、`ko`、`fr`、`ru`、`de`、`es`。
 - `yds today`：翻译后回车粘贴到原应用。
 - `yd *`：查看最近 20 条翻译记录，回车复制选中的译文。
-- `ydupdate`：立即检查最新 Release；发现新版后回车打开下载页面。平时使用时也会每 24 小时在后台检查一次，不影响当前翻译。
+- `ydupdate`：立即检查最新 Release；发现新版后回车打开下载页面。平时触发的后台检查不等待网络，发现新版后会在下一次翻译结果中提示。检查失败后隔约 1 小时重试。
 - 在 Workflow 中给 **Hotkey** 绑定快捷键后，可先选中文本，再用快捷键翻译并回车粘贴。
 
 原项目的配置说明见 [Wiki](https://github.com/wensonsmith/YoudaoTranslator/wiki)。
