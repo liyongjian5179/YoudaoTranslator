@@ -156,7 +156,7 @@
 			</dict>
 			<key>type</key><string>alfred.workflow.action.openurl</string>
 			<key>uid</key><string>037A4C3E-1F70-4110-B788-0D116BF40773</string>
-			<key>version</key><integer>3</integer>
+			<key>version</key><integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key><dict><key>inputstring</key><string>{query}</string><key>matchcasesensitive</key><false/><key>matchmode</key><integer>2</integer><key>matchstring</key><string>^(?!~).+</string></dict>
@@ -228,7 +228,7 @@ afplay "$voice"</string><key>scriptargtype</key><integer>1</integer><key>scriptf
 	<key>variables</key>
 	<dict><key>key</key><string></string><key>platform</key><string>Youdao</string><key>secret</key><string></string></dict>
 	<key>variablesdontexport</key><array><string>key</string><string>secret</string></array>
-	<key>version</key><string>3.4.0</string>
+	<key>version</key><string>3.4.1</string>
 	<key>webaddress</key><string>https://github.com/liyongjian5179/YoudaoTranslator</string>
 </dict>
 </plist>

@@ -1,6 +1,6 @@
 {
   "name": "youdao.translator",
-  "version": "3.4.0",
+  "version": "3.4.1",
   "description": "Elegant translation tool",
   "main": "index.js",
   "scripts": {

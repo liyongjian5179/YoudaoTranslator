@@ -1,7 +1,7 @@
 
 # YoudaoTranslate | 有道翻译
 
-当前源码版本：[v3.4.0](https://github.com/liyongjian5179/YoudaoTranslator/tree/v3.4.0)
+当前源码版本：[v3.4.1](https://github.com/liyongjian5179/YoudaoTranslator/tree/v3.4.1)
 
 ## 此 Fork 的改进
 

@@ -1,6 +1,6 @@
 declare var tjs: any;
 
-const currentVersion = '3.4.0';
+const currentVersion = '3.4.1';
 const latestReleaseUrl = 'https://github.com/liyongjian5179/YoudaoTranslator/releases/latest';
 const cacheFile = 'update-cache.json';
 
