@@ -22,9 +22,11 @@ class Translator implements ITranslator{
     // url
     const url = this.adapter.url(word);
     // fetch
-    const response = await redaxios.create().get(url);
+    // txiki's response.text() misdecodes UTF-8, so decode the bytes explicitly.
+    const response = await redaxios.create().get(url, { responseType: 'arrayBuffer' });
     // parse
-    const result = this.adapter.parse(response.data);
+    const data = JSON.parse(new TextDecoder('utf-8').decode(response.data));
+    const result = this.adapter.parse(data);
     // compose
     return new Workflow().compose(result).output();
   }
