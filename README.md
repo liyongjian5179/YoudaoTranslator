@@ -40,6 +40,16 @@ macOS Monterey 请使用 V3 版本！
 ### 2. 配置Workflow
 
 [👉 请参考 wiki 进行配置](https://github.com/wensonsmith/YoudaoTranslator/wiki)
+
+### 3. 从源码构建 Alfred Workflow
+
+```bash
+npx -y pnpm@7.33.7 install --frozen-lockfile
+npm run package
+```
+
+生成的 `YoudaoTranslator.alfredworkflow` 支持 Apple Silicon 和 Intel Mac。导入 Alfred 后，在 Workflow Variables 中填写 `key`、`secret` 和 `platform`。
+
 ## Contributors
 
 <a href="https://iwenson.com" target="_blank"><img src="https://avatars1.githubusercontent.com/u/2544185?s=120&v=4" height="60"/></a> 

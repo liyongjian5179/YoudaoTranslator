@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "rimraf dist && rollup -c rollup.config.js",
+    "package": "./scripts/package-workflow.sh",
     "test": "./runtime/quick ./dist/index.js"
   },
   "author": "Wenson",
